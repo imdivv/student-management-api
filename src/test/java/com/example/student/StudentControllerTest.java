@@ -82,7 +82,7 @@ public class StudentControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content[0].id").value(1))
                 .andExpect(jsonPath("$.content[0].name").value("Rahul"))
-                .andExpect(jsonPath("$.totalElements").value(1));
+                .andExpect(jsonPath("$.page.totalElements").value(1));
 
         verify(service, times(1))
                 .getStudents(0, 10, "id", "asc");
